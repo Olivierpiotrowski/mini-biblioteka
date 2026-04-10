@@ -24,6 +24,27 @@ public class Biblioteka {
         }
     }
 
+    public void wypozyczKsiazke(String tytul, Czytelnik czytelnik) {
+        Ksiazka k = znajdzKsiazkePoTytule(tytul);
+            if (k != null && k.isDostepna()) {
+                k.wypozycz();
+            czytelnik.zwiekszLiczbeWypozyczen();
+            } else {
+                System.out.println("Nie można wypożyczyć książki");
+            }
+        }
+    }
+
+    public void zwrocKsiazke(String tytul, Czytelnik czytelnik) {
+        Ksiazka k = znajdzKsiazkePoTytule(tytul);
+            if (k != null && !k.isDostepna()) {
+                k.zwroc();
+            czytelnik.zmniejszLiczbeWypozyczen();
+            } else {
+                System.out.println("Nie można zwrócić książki");
+        }
+    }
+
     public Ksiazka znajdzKsiazkePoTytule(String tytul) {
         for (int i = 0; i < liczbaKsiazek; i++) {
             if (ksiazki[i].getTytul().equals(tytul)) {

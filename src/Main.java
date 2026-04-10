@@ -5,15 +5,7 @@ public class Main {
         Ksiazka k2 = new Ksiazka("1984", "Orwell", 250, true);
         Ksiazka k3 = new Ksiazka("Hobbit", "Tolkien", 200, true);
 
-        k1.wypiszInfo();
-        k1.wypozycz();
-        k1.wypiszInfo();
-
         Czytelnik c1 = new Czytelnik("Jan", "Kowalski", 1);
-        Czytelnik c2 = new Czytelnik("Anna", "Nowak", 2);
-
-        c1.wypiszDane();
-        c2.wypiszDane();
 
         Biblioteka b = new Biblioteka(10);
 
@@ -21,6 +13,19 @@ public class Main {
         b.dodajKsiazke(k2);
         b.dodajKsiazke(k3);
 
+        System.out.println("Dostępne książki:");
+        b.wypiszDostepneKsiazki();
+
+        System.out.println("\nWypożyczanie:");
+        b.wypozyczKsiazke("1984", c1);
+
+        System.out.println("\nPo wypożyczeniu:");
+        b.wypiszDostepneKsiazki();
+
+        System.out.println("\nZwrot:");
+        b.zwrocKsiazke("1984", c1);
+
+        System.out.println("\nPo zwrocie:");
         b.wypiszDostepneKsiazki();
     }
 }
