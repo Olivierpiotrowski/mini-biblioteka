@@ -14,5 +14,13 @@ public class Main {
 
         c1.wypiszDane();
         c2.wypiszDane();
+
+        Biblioteka b = new Biblioteka(10);
+
+        b.dodajKsiazke(k1);
+        b.dodajKsiazke(k2);
+        b.dodajKsiazke(k3);
+
+        b.wypiszDostepneKsiazki();
     }
 }
