@@ -8,5 +8,11 @@ public class Main {
         k1.wypiszInfo();
         k1.wypozycz();
         k1.wypiszInfo();
+
+        Czytelnik c1 = new Czytelnik("Jan", "Kowalski", 1);
+        Czytelnik c2 = new Czytelnik("Anna", "Nowak", 2);
+
+        c1.wypiszDane();
+        c2.wypiszDane();
     }
 }
